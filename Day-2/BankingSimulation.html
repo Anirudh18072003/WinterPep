@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="BankingSimulation.css" />
+    <script>
+      var balance = 192344;
+      function Withdraw() {
+        let divid = document.getElementById("d1");
+        divid.innerHTML = `<p> Enter the amount you want to withdraw</p>
+        <input type="number" id="amount">
+       <button onclick="withdrawamount()">Withdraw</button>
+       
+        
+        `;
+      }
+
+      function withdrawamount() {
+        let divid = document.getElementById("d1");
+        let amount = parseInt(document.getElementById("amount").value);
+        if (amount > balance) {
+          divid.innerHTML = `<h4> Please enter a valid amount Your balance is Rs.${balance}</h4> <button onclick="ResetMenu()"> Home </button>`;
+        }
+        if (isNaN(amount)) {
+          alert("Enter some amount");
+        } else {
+          let remainingamount = balance - amount;
+          balance = remainingamount;
+          divid.innerHTML = `<h4> you have withdrawn this ${amount} </h4> </p> <h3>Your Balance is Rs.${balance} </h3> <button onclick="ResetMenu()"> Home </button>`;
+        }
+      }
+
+      function ResetMenu() {
+        var divid = document.getElementById("d1");
+        divid.innerHTML = `
+          <p>Select what you want to do:</p>
+          <button onclick="Withdraw()">Withdraw</button>
+          <button onclick="Deposit()">Deposit</button>
+          
+        `;
+      }
+
+      function Deposit() {
+        let divid = document.getElementById("d1");
+        divid.innerHTML = `<p> Enter the amount you want to Deposit</p>
+        <input type="number" id="amount1">
+        <button onclick="Depositmoney()">Depositmoney</button>
+       
+        `;
+      }
+
+      function Depositmoney() {
+        let divid = document.getElementById("d1");
+        let amount = parseInt(document.getElementById("amount1").value);
+        if (amount <= 0) {
+          divid.innerHTML = `<h4> Please enter a valid amount </h4> <button onclick="ResetMenu()"> Home </button>`;
+        }
+        if (isNaN(amount)) {
+          alert("Enter some amount");
+        } else {
+          newbalance = balance + amount;
+          balance = newbalance;
+          divid.innerHTML = `<h4> You have Deposited this Rs.${amount} </h4> </p> <h3>Your Balance amount is Rs.${balance} </h3> <button onclick="ResetMenu()"> Home </button>`;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="d1">
+      <p>Select what you want to do</p>
+
+      <button onclick="Withdraw()">Withdraw</button>
+      <button onclick="Deposit()">Deposit</button>
+    </div>
+  </body>
+</html>

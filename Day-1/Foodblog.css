@@ -1,0 +1,28 @@
+.col img {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.col {
+  color: black;
+  font-size: larger;
+  font-weight: 500;
+  margin: 2px;
+}
+#main {
+  margin-top: 2%;
+  background-image: url("backgroundimage.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 500px;
+}
+.orange {
+  color: orange;
+}
+.bttn:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}

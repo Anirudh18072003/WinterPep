@@ -1,15 +1,16 @@
 import "./App.css";
-import Navbar from "./Components/Navbar";
+
+import Shoppingcart from "./Components/Shoppingcart";
 
 function App() {
-  const user = {
-    name: "Anirudh",
-    age: "20",
-    country: "India",
-  };
+  // const user = {
+  //   name: "Anirudh",
+  //   age: "20",
+  //   country: "India",
+  // };
   return (
     <div className="App">
-      <Navbar user={user}></Navbar>
+      <Shoppingcart></Shoppingcart>
     </div>
   );
 }

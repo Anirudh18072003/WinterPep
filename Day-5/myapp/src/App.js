@@ -1,6 +1,6 @@
 import "./App.css";
 
-import Shoppingcart from "./Components/Shoppingcart";
+import { Visuals } from "./Components/Visuals";
 
 function App() {
   // const user = {
@@ -10,7 +10,7 @@ function App() {
   // };
   return (
     <div className="App">
-      <Shoppingcart></Shoppingcart>
+      <Visuals></Visuals>
     </div>
   );
 }
